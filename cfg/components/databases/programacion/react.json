@@ -1,0 +1,18 @@
+{
+  "btn": "react",
+  "preguntas": [
+    {
+      "texto": "¿firewall?",
+      "respuesta": "Algunos lenguajes populares para el desarrollo web son JavaScript, Python y Ruby.",
+      "codigo": "// Declaración de variable\nint myVariable = 42;\nfunction hola(){\nif(myVariable == 'hola'){\n \tmyVariable = 'conc'; \n}\nconsole.log(myVariable);\nstring hola = 'wtf'; \n",
+      "videos": ["inicir-projecto-node.mkv"],
+      "pasos": [
+        "/B1.-B/ Abre la consola o terminal.",
+        "/B2.-B/ Verifica la versión de Node JS utilizando el comando: /Cnode -vC/",
+        "/B3.-B/ Crea una carpeta con el nombre de tu proyecto.",
+        "/B4.-B/ Accede a la carpeta del proyecto utilizando el comando: /Ccd nombre-del-proyectoC/",
+        "/B5.-B/ Inicia el proyecto utilizando el comando /Cnpm initC/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "opciones": {
+    "btn1": "Seguridad informatica",
+    "Seguridad informatica": {
+      "redes": {
+        "tema": "redes",
+        "data": "seguridadinf/redes.json"
+      },
+      "firewall": {
+        "tema": "firewall",
+        "data": "seguridadinf/firewall.json"
+      },
+      "virus": {
+        "tema": "virus",
+        "data": "seguridadinf/virus.json"
+      }
+    },
+    "btn2": "Programacion",
+    "Programacion": {
+      "javascript": {
+        "tema": "javascript",
+        "data": "programacion/javascript.json"
+      },
+      "react": {
+        "tema": "react",
+        "data": "programacion/react.json"
+      },
+      "node": {
+        "tema": "node",
+        "data": "programacion/node.json"
+      }
+    },
+
+    "btn3": "Inicio",
+    "Inicio": {
+      "configuracion de windows": {
+        "tema": "configuracion de windows",
+        "data": "inicio/windows.json"
+      },
+      "ubuntu": {
+        "tema": "ubuntu",
+        "data": "inicio/ubuntu.json"
+      },
+      "debian": {
+        "tema": "debian",
+        "data": "inicio/debian.json"
+      }
+    }
+  }
+}

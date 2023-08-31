@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <link rel="stylesheet" href="cfg/styles/bulma.min.css" />
+    <link rel="stylesheet" href="cfg/styles/prism.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link <!-- ARHIVOS PRINCIPALES -- />
+    <link rel="stylesheet" href="cfg/mod.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="body">
+        <div class="menu-toggle">
+          <span class="icon">
+            <i class="fas fa-cog"></i>
+          </span>
+        </div>
+        <div class="menu-options">
+          <ul>
+            <li class="li">
+              <p class="area-title" id="versionTitle">Version: Beta 0.1</p>
+            </li>
+            <div class="dropdown" id="dropdown">
+              <div class="dropdown-trigger">
+                <button
+                  id="droppear"
+                  class="button"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu"
+                >
+                  <span id="selected-option">Exposición Efectiva</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content" id="dropdown-content"></div>
+              </div>
+            </div>
+
+            <hr class="menu-divider" />
+            <li class="li">
+              <p class="area-title" id="cuentasTitle">Cuentas</p>
+            </li>
+            <nav class="panel">
+              <div class="panel-block">
+                <p class="control has-icons-left">
+                  <input
+                    class="input"
+                    type="text"
+                    id="search-input"
+                    placeholder="Search"
+                  />
+                  <span class="icon is-left">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                  </span>
+                </p>
+              </div>
+              <div id="question-list"></div>
+              <div id="category-select"></div>
+            </nav>
+          </ul>
+        </div>
+
+        <div class="card console">
+          <div class="card btn">
+            <button id="btn-secinform1" class="btn-area seleccionado"></button>
+            <button id="btn-secinform2" class="btn-area"></button>
+            <button id="btn-secinform3" class="btn-area"></button>
+          </div>
+          <div class="options" id="options"></div>
+
+          <div class="card-content">
+            <p class="console-text"></p>
+          </div>
+          <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+              <!-- HTML !-->
+              <!-- Aquí se mostrarán los mensajes del chat -->
+              <div class="gradiente-movil"></div>
+              <div id="description"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input">
+          <div class="textarea-container">
+            <textarea
+              type="text"
+              id="user-input"
+              placeholder="Escribe un mensaje..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="cfg/styles/prism.js"></script>
+    <script type="module" src="cfg/mod.js"></script>
+  </body>
+</html>
