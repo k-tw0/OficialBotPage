@@ -1,0 +1,12 @@
+{
+  "btn": "Seguridad de aplicaciones web",
+  "preguntas": [
+    {
+      "texto": "¿ Qué es la seguridad en aplicaciones web ?",
+      "respuesta": "Esta área se centra en proteger las aplicaciones web de ataques y amenazas. Esto incluye el uso de técnicas de seguridad como la validación de entrada, la codificación segura y el cifrado para proteger estas aplicaciones.",
+      "codigo": "",
+
+      "pasos": []
+    }
+  ]
+}

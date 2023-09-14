@@ -140,15 +140,12 @@ class QuestionApp {
         this.messageService.showQuestionDetails(
           question.texto,
           question.respuesta,
-          question.codigo,
           question.videos,
-          question.pasos
+          question.pasos,
+          question.respuestasCodigo
         );
 
         this.userInput.value = "";
-        console.log(
-          question.texto + " " + " " + question.respuesta + " " + question.btn
-        );
       });
       this.questionList.appendChild(questionLink);
     });
@@ -178,7 +175,7 @@ class QuestionApp {
         // Agregar escuchadores de eventos para los botones
         buttonSeguridad.addEventListener("click", () => {
           if (!buttonSeguridad.classList.contains("seleccionado")) {
-            this.changeState("Seguridad informatica");
+            this.changeState("Seguridad de red");
             this.toggleButtonStyle(buttonSeguridad);
             this.toggleButtonStyle(buttonProgramacion, true); // Deseleccionar otro botón
             this.toggleButtonStyle(buttonInicio, true); // Deseleccionar otro botón
@@ -191,7 +188,7 @@ class QuestionApp {
             this.toggleButtonStyle(buttonProgramacion);
             this.toggleButtonStyle(buttonSeguridad, true); // Deseleccionar otro botón
             this.toggleButtonStyle(buttonInicio, true); // Deseleccionar otro botón
-            this.changeState("Programacion");
+            this.changeState("Seguridad de datos");
             this.selectFirstDropdownItem();
           }
         });
@@ -201,7 +198,7 @@ class QuestionApp {
             this.toggleButtonStyle(buttonInicio);
             this.toggleButtonStyle(buttonSeguridad, true); // Deseleccionar otro botón
             this.toggleButtonStyle(buttonProgramacion, true); // Deseleccionar otro botón
-            this.changeState("Inicio");
+            this.changeState("Seguridad de aplicaciones");
             this.selectFirstDropdownItem();
           }
         });
@@ -209,7 +206,7 @@ class QuestionApp {
         this.selectOption;
 
         this.selectFirstDropdownItem();
-        this.changeState("Seguridad informatica");
+        this.changeState("Seguridad de red");
 
         this.selectFirstDropdownItem();
         buttonSeguridad.click();

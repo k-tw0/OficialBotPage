@@ -1,23 +1,31 @@
 {
   "opciones": {
-    "btn1": "Seguridad informatica",
-    "Seguridad informatica": {
-      "redes": {
-        "tema": "redes",
-        "data": "seguridadinf/redes.json"
+    "btn1": "Seguridad de red",
+    "Seguridad de red": {
+      "Seguridad perimetral": {
+        "tema": "Seguridad perimetral",
+        "data": "seguridad_red/perimetral.json"
       },
-      "firewall": {
-        "tema": "firewall",
-        "data": "seguridadinf/firewall.json"
+      "Seguridad de endpoints": {
+        "tema": "Seguridad de endpoints",
+        "data": "seguridad_red/endpoints.json"
       },
-      "virus": {
-        "tema": "virus",
-        "data": "seguridadinf/virus.json"
+      "Seguridad de la nube": {
+        "tema": "Seguridad de la nube",
+        "data": "seguridad_red/nube.json"
+      },
+      "Seguridad de aplicaciones web": {
+        "tema": "Seguridad de aplicaciones web",
+        "data": "seguridad_red/appweb.json"
+      },
+      "Seguridad de la información": {
+        "tema": "Seguridad de la información",
+        "data": "seguridad_red/informacion.json"
       }
     },
-    "btn2": "Programacion",
-    "Programacion": {
-      "javascript": {
+    "btn2": "Seguridad de datos",
+    "Seguridad de datos": {
+      "datos": {
         "tema": "javascript",
         "data": "programacion/javascript.json"
       },
@@ -31,8 +39,8 @@
       }
     },
 
-    "btn3": "Inicio",
-    "Inicio": {
+    "btn3": "Seguridad de aplicaciones",
+    "Seguridad de aplicaciones": {
       "configuracion de windows": {
         "tema": "configuracion de windows",
         "data": "inicio/windows.json"

@@ -223,15 +223,15 @@ textarea[type="text"]:active {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #282a316b;
-  border-radius: 15px;
   border: solid;
+  background: none;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
   color: #e9e1e1;
   text-shadow: none;
+  border: none;
 }
 #ffffff #f1aeae #ec7a7a .token.keyword {
   color: rgb(0, 179, 255);
@@ -273,7 +273,6 @@ pre[class*="language-"] {
 
 .code-container {
   width: 100%;
-  padding: 5px;
 }
 
 .code-text-show {
@@ -306,6 +305,11 @@ pre[class*="language-"] {
   align-items: center;
 }
 
+.code-container {
+  background: #000;
+  border-radius: 5px;
+}
+
 .code-text {
   opacity: 0;
   transition: opacity 0.5s, transform 0.5s;
@@ -316,6 +320,15 @@ pre[class*="language-"] {
   color: rgb(0, 0, 0);
   font-size: 18px;
   font-weight: bold;
+}
+
+.filename-div {
+  font-size: small;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  border-radius: 5px;
+  background: #1d1c1c;
+  padding: 1rem;
 }
 
 button {
@@ -435,6 +448,7 @@ a:hover {
 
 .steps-list {
   margin-top: 2rem;
+  padding-bottom: 10px;
 }
 
 .gpt {

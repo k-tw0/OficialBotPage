@@ -1,0 +1,11 @@
+{
+  "btn": "Seguridad perimetral",
+  "preguntas": [
+    {
+      "texto": "¿ Que es la seguridad perimetral ?",
+      "respuesta": "Esta área se centra en proteger la red de una organización de ataques externos. Esto incluye el uso de firewalls, sistemas de detección de intrusiones (IDS/IPS) y otras tecnologías para bloquear el acceso no autorizado a la red.",
+      "codigo": "",
+      "pasos": []
+    }
+  ]
+}

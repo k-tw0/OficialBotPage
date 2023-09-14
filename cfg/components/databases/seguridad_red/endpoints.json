@@ -1,0 +1,11 @@
+{
+  "btn": "Seguridad de endpoints",
+  "preguntas": [
+    {
+      "texto": "¿ Que es la seguridad de endpoints ?",
+      "respuesta": "Esta área se centra en proteger los dispositivos individuales que se conectan a la red, como computadoras, servidores, teléfonos inteligentes y otros dispositivos. Esto incluye el uso de antivirus, antimalware y otras soluciones de seguridad para proteger estos dispositivos de ataques y amenazas.",
+      "codigo": "",
+      "pasos": []
+    }
+  ]
+}

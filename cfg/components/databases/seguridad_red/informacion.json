@@ -1,0 +1,12 @@
+{
+  "btn": "Seguridad de la información",
+  "preguntas": [
+    {
+      "texto": "¿ Qué es la seguridad de la información ?",
+      "respuesta": "Esta área se centra en proteger la información confidencial de una organización, como datos financieros, datos de clientes y otros datos sensibles. Esto incluye el uso de técnicas de seguridad como el cifrado, la gestión de acceso y la protección de la identidad para proteger esta información.",
+      "codigo": "",
+
+      "pasos": []
+    }
+  ]
+}

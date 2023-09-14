@@ -1,0 +1,11 @@
+{
+  "btn": "Seguridad de la nube",
+  "preguntas": [
+    {
+      "texto": "¿ Qué es la seguridad de la nube ?",
+      "respuesta": "Esta área se centra en proteger los datos y sistemas que se almacenan en la nube. Esto incluye el uso de cifrado, autenticación y otras medidas de seguridad para proteger estos datos de acceso no autorizado.",
+      "codigo": "",
+      "pasos": []
+    }
+  ]
+}

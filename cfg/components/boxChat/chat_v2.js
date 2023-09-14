@@ -62,7 +62,7 @@ const interval = setInterval(() => {
     dotsElement.textContent.length < 3 ? dotsElement.textContent + "." : ".";
 }, 500);
 
-function createAnswerElement(response, codigo, videos, pasos) {
+function createAnswerElement(response, videos, pasos, respuestasCodigo) {
   const newAnswerElement = document.createElement("div");
   newAnswerElement.classList.add("response", "message-answer");
 
@@ -100,17 +100,31 @@ function createAnswerElement(response, codigo, videos, pasos) {
     }
 
     // Agregar contenedor para el código
-    if (codigo) {
-      const codeContainer = code(codigo);
+    /* if (codigo) {
+      const codeContainer = code(codigo, "name");
       newAnswerElement.appendChild(codeContainer);
-    }
+    }*/
 
     // Agregar contenedor para los pasos
     if (pasos) {
       const stepsContainer = pass(pasos);
       newAnswerElement.appendChild(stepsContainer);
     }
+    if (respuestasCodigo) {
+      respuestasCodigo.forEach((respuestaCodigo) => {
+        const codeContainer = code(
+          respuestaCodigo.codigo,
+          respuestaCodigo.nombreArchivo
+        );
+        newAnswerElement.appendChild(codeContainer);
 
+        // Obtener el nombre del archivo y el contenido
+        const nombreArchivo = respuestaCodigo.nombreArchivo;
+        const contenidoCodigo = respuestaCodigo.codigo;
+        console.log(`Nombre del archivo: ${nombreArchivo}`);
+        console.log(`Contenido del código:\n${contenidoCodigo}`);
+      });
+    }
     // Agregar clase adicional para aplicar estilos una vez que se completa la animación
     const chatMessages = document.getElementById("chat-messages");
     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -150,10 +164,28 @@ function pass(pasos) {
 
   return stepsContainer;
 }
-function code(codigo) {
+// ... (código anterior) ...
+
+function code(codigo, nombreArchivo) {
   const codeContainer = document.createElement("div");
+  const btnContainer = document.createElement("div");
 
   if (codigo) {
+    // Crear un div para contener solo el nombre del archivo
+    const filenameDiv = document.createElement("div");
+    filenameDiv.classList.add("filename-div");
+
+    // Crear un párrafo para mostrar el nombre del archivo
+    const filenameElement = document.createElement("p");
+    filenameElement.textContent = `Archivo: ${nombreArchivo}`;
+
+    // Agregar el párrafo al div del nombre del archivo
+    filenameDiv.appendChild(filenameElement);
+
+    // Crear un div para contener el código
+    const codeDiv = document.createElement("div");
+    codeDiv.classList.add("code-div");
+
     const codeElement = document.createElement("code");
     codeElement.textContent = codigo;
     codeElement.classList.add("language-javascript");
@@ -161,14 +193,22 @@ function code(codigo) {
     const preElement = document.createElement("pre");
     preElement.appendChild(codeElement);
 
+    // Agregar el código al div del código
+    codeDiv.appendChild(preElement);
+
     codeContainer.classList.add("code-container");
-    codeContainer.appendChild(preElement);
+
+    // Agregar los divs al contenedor principal
+    codeContainer.appendChild(filenameDiv);
+    codeContainer.appendChild(codeDiv);
 
     Prism.highlightElement(codeElement);
   }
 
   return codeContainer;
 }
+
+// ... (código posterior) ...
 
 function almacen(videos) {
   const videoContainer = document.createElement("div");
@@ -218,12 +258,12 @@ export class MessageService {
 
   // ... lógica y métodos de la clase MessageService ...
 
-  showQuestionDetails(texto, respuesta, codigo, videos, pasos) {
+  showQuestionDetails(texto, respuesta, videos, pasos, respuestasCodigo) {
     console.log(`Texto: ${texto}`);
     console.log(`Respuesta: ${respuesta}`);
-    console.log(`Código: ${codigo}`);
     console.log(`Videos: ${videos}`);
     console.log(`Pasos: ${pasos}`);
+    console.log(`Respuestas de Código:`, respuestasCodigo);
 
     MessageService.responseCount++;
 
@@ -235,9 +275,9 @@ export class MessageService {
 
     const similarQuestion = createAnswerElement(
       respuesta,
-      codigo,
       videos,
-      pasos
+      pasos,
+      respuestasCodigo // Reemplaza 'codigo' por 'respuestasCodigo'
     );
 
     const answerElements = messageContainer.querySelectorAll(
@@ -248,7 +288,6 @@ export class MessageService {
       element.classList.remove("animarGradiente");
     });
 
-    // Eliminar la clase de gradiente animado para todas las respuestas previas
     answerElementsArray.forEach((element) => {
       element.classList.remove("animarGradiente");
     });
@@ -256,15 +295,13 @@ export class MessageService {
     if (similarQuestion) {
       const answerElement = createAnswerElement(
         respuesta,
-        codigo,
         videos,
-        pasos
+        pasos,
+        respuestasCodigo // Reemplaza 'codigo' por 'respuestasCodigo'
       );
       answerElement.id = `response-${MessageService.responseCount}`;
       messageContainer.appendChild(answerElement);
-      // Agregar la clase de gradiente animado solo al último elemento de respuesta
       answerElement.classList.add("animarGradiente");
-      // Agregar la referencia del elemento de respuesta al arreglo
       answerElementsArray.push(answerElement);
     } else {
       const noAnswerElement = document.createElement("div");
